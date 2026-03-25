@@ -32,7 +32,6 @@ with sqlite3.connect(sys.argv[1]) as db:
 
         if last_provider != provider:
             last_provider = provider
-
             data[provider] = dict()
 
         # sanitize event message
@@ -57,7 +56,6 @@ with sqlite3.connect(sys.argv[1]) as db:
             message = message.replace('  ', ' ')
 
         message = message.strip()
-
         message = message.removesuffix(".")
         message = message.removesuffix("-")
         message = message.removesuffix(":")
@@ -91,7 +89,6 @@ with open("events.go", "w+") as file:
             file.write(f'        {event_id}: "{message.strip()}",\n')
 
         file.write('    },\n')
-
     file.write('}\n')
 
 
