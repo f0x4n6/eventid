@@ -1,12 +1,9 @@
-# Event IDs
-A script to generate all the event provider/id/message bundles from a database as `GO`, `CSV`, `JSON` files. Roughly about *51600* for a Windows 10 system.
+# Evtx DB
+Database of all *Provider* / *Event ID* / *Message* bundles up to Windows 10.
 
-Based on the `welm_combined.db` from [evtx-data](https://github.com/Velocidex/evtx-data/tree/master/welm) by [Velocidex](https://github.com/Velocidex).
-
-## Usage
-```console
-$ ./generate.py events.db
-```
+## Acknowledgments
+* Based on the [evtx-data](https://github.com/Velocidex/evtx-data/tree/master/welm) by [Velocidex](https://github.com/Velocidex).
+* Based on the [WELM project](https://github.com/nsacyber/Windows-Event-Log-Messages) by [NSACyber](https://github.com/nsacyber).
 
 ## License
 Released under the [MIT License](LICENSE.md).

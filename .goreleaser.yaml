@@ -1,0 +1,18 @@
+version: 2
+
+before:
+  hooks:
+    - go mod tidy
+
+archives:
+  - formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
