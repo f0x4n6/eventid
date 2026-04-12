@@ -59,7 +59,7 @@ def build() -> int:
                 data[provider][int(event_id)] = message
                 n += 1
 
-    with zstd.open("pkg/evtx/db.zst", "w") as f:
+    with zstd.open("evtx_db.zst", "w") as f:
         f.write(json.dumps(data, sort_keys=True).encode("utf-8"))
 
     return n

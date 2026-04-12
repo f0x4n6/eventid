@@ -1,4 +1,4 @@
-package evtxdb
+package evtx_db
 
 import "testing"
 

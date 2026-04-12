@@ -1,5 +1,5 @@
-// Package evtxdb provides an event message database.
-package evtxdb
+// Package evtx_db provides an event message database.
+package evtx_db
 
 import (
 	"bytes"
@@ -11,7 +11,7 @@ import (
 	"github.com/klauspost/compress/zstd"
 )
 
-//go:embed db.zst
+//go:embed evtx_db.zst
 var db []byte
 
 // Provider mapping of event ids and messages.
