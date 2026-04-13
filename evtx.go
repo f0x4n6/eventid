@@ -11,15 +11,15 @@ import (
 	"github.com/klauspost/compress/zstd"
 )
 
-//go:embed evtx_db.zst
+//go:embed db.zst
 var db []byte
 
-// Provider mapping of event ids and messages.
-type Provider map[string]map[int64]string
+// Providers mapping of event ids and messages.
+type Providers map[string]map[int64]string
 
-// Load returns the decompressed embedded provider map.
-func Load() (Provider, error) {
-	var prv Provider
+// Load returns the decompressed embedded providers.
+func Load() (Providers, error) {
+	var prv Providers
 
 	r, err := zstd.NewReader(bytes.NewReader(db))
 
