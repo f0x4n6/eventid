@@ -32,6 +32,7 @@ from compression import zstd
 def declutter(msg: str) -> str:
     msg = msg.split(". ")[0]
     msg = msg.replace("  ", " ")
+    msg = msg.replace("%", "$")
     msg = msg.removesuffix(".")
 
     return msg.strip()
