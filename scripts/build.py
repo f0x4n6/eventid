@@ -60,14 +60,14 @@ def build() -> int:
                 data[provider][int(event_id)] = message
                 n += 1
 
-    with zstd.open("db.zst", "w") as f:
+    with zstd.open("events/events_db.zst", "w") as f:
         f.write(json.dumps(data, sort_keys=True).encode("utf-8"))
 
     return n
 
 
 def main(script, *args):
-    print(f"[*] Build database with {build()} event messages")
+    print(f"[*] Build database of {build()} event messages")
 
 
 if __name__ == "__main__":

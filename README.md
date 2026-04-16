@@ -1,5 +1,14 @@
-# Evtx DB
-Database of all *Provider* / *Event ID* / *Message* bundles up to Windows 10.
+# EventID
+Lookup Windows event messages by id and provider (up to Windows 10).
+
+```console
+go install go.foxforensics.dev/eventid@latest
+```
+
+## Usage
+```console
+$ eventid [PROVIDER:]ID ...
+```
 
 ## Acknowledgments
 * Based on the [evtx-data](https://github.com/Velocidex/evtx-data/tree/master/welm) by [Velocidex](https://github.com/Velocidex).

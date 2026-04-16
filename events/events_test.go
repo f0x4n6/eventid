@@ -1,4 +1,4 @@
-package evtx_db
+package events
 
 import "testing"
 
