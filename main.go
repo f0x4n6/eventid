@@ -42,7 +42,7 @@ func main() {
 		var tag string
 		var found bool
 
-		_, _ = fmt.Println(color.HiWhiteString("=== Windows Event ID: %s ===\n", id))
+		_, _ = fmt.Println(color.HiWhiteString("=== Windows Event ID %s ===", id))
 
 		if strings.Contains(id, ":") {
 			t := strings.SplitN(id, ":", 2)
