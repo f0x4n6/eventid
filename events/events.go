@@ -8,11 +8,11 @@ import (
 
 	_ "embed"
 
-	"github.com/klauspost/compress/zstd"
+	"github.com/ulikunitz/xz"
 )
 
-//go:embed events_db.zst
-var db []byte
+//go:embed database.xz
+var database []byte
 
 // Providers mapping of event ids and messages.
 type Providers map[string]map[int64]string
@@ -21,13 +21,11 @@ type Providers map[string]map[int64]string
 func Load() (Providers, error) {
 	var prv Providers
 
-	r, err := zstd.NewReader(bytes.NewReader(db))
+	r, err := xz.NewReader(bytes.NewReader(database))
 
 	if err != nil {
 		return nil, err
 	}
-
-	defer r.Close()
 
 	b, err := io.ReadAll(r)
 
